@@ -1,0 +1,179 @@
+@import (reference) '../style/index.less';
+
+// start
+// 键盘背景色
+@numeric-input-background: @color-divider-background;
+// 键盘边框
+@numeric-input-border-color: @color-fill-grey-base;
+// 按键间隔 大屏
+@numeric-input-space-md: 16 * @rpx;
+// 按键间隔 小屏
+@numeric-input-space-sm: 4 * @rpx;
+// header 颜色
+@numeric-input-header-color: @color-text-subtitle;
+// header 字体大小
+@numeric-input-header-size: @font-size-content;
+// 按键字体大小
+@numeric-input-item-size: 50 * @rpx;
+// 按键高度
+@numeric-input-item-height: 114 * @rpx;
+// 按键字体颜色
+@numeric-input-item-color: @color-text-title;
+// 按键字体
+@numeric-input-item-family: @DINPro;
+// 按键字体大小，小屏
+@numeric-input-item-size-sm: 47 * @rpx;
+// 按键高度，小屏
+@numeric-input-item-height-sm: 90 * @rpx;
+
+@numeric-input-confirm-size: 36 * @rpx;
+@numeric-input-confirm-color: @color-text-base;
+@numeric-input-confirm-color-disabled: @color-text-subtitle;
+@numeric-input-confirm-background: @color-fill-primary;
+@numeric-input-confirm-background-disabled: @color-fill-grey-inverse;
+
+// end
+
+@keyboardPrefixCls: amd-numeric-keypad;
+@space-md: @numeric-input-space-md;
+@space-sm: @numeric-input-space-sm;
+
+// 矮胖型屏幕适配
+// 判断依据，胖于 1080/1920 的机器都算矮胖
+// 比如 iphone (6,7,8) plus 系列刚好属于不胖的代表
+.small-screen(@rules) {
+  @media screen and (min-aspect-ratio: ~'1081/1920') {
+    @rules();
+  }
+}
+
+.@{keyboardPrefixCls} {
+  &-wrapper {
+    position: fixed;
+    z-index: 10000;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: @numeric-input-background;
+    transform: translateZ(0);
+    transition-duration: 0.2s;
+    transition-property: bottom;
+    user-select: none;
+    .iphonex({padding-bottom: @safe-area-inset-bottom;});
+
+    &&-hide {
+      bottom: -1000 * @rpx;
+    }
+
+    table {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border-collapse: separate;
+      border-spacing: 1px;
+
+      tr {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    width: 25%;
+    height: @numeric-input-item-height;
+    box-sizing: border-box;
+    padding: 10 * @rpx;
+    margin: 0;
+    background: @color-fill-grey-inverse;
+    color: @numeric-input-item-color;
+    font-family: @numeric-input-item-family;
+    font-size: @numeric-input-item-size;
+    text-align: center;
+    user-select: none;
+    .small-screen(
+      {font-size: @numeric-input-item-size-sm; height: @numeric-input-item-height-sm;}
+    );
+
+    &-active,
+    &-disabled {
+      opacity: @opacity-disabled;
+
+      & > span {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &-transparent {
+    background: transparent;
+  }
+
+  &-confirm {
+    background-color: @numeric-input-confirm-background;
+    color: @numeric-input-confirm-color;
+    font-size: @numeric-input-confirm-size;
+    font-weight: 500;
+    word-break: break-all;
+
+    &.@{keyboardPrefixCls}-item-disabled {
+      background-color: @numeric-input-confirm-background-disabled;
+      color: @numeric-input-confirm-color-disabled;
+    }
+  }
+
+  &-delete-icon {
+    width: 52 * @rpx;
+    height: 38 * @rpx;
+  }
+
+  &-header {
+    display: flex;
+
+    // hack, 至少可以撑开到刚好一行文字的高度
+    min-height: 70 * @rpx;
+    align-items: center;
+    justify-content: center;
+    // 刚好和 table 的 border-spacing 保持一致
+    margin-top: 1px;
+    background: @color-fill-grey-inverse;
+    color: @numeric-input-header-color;
+
+    &-content {
+      font-size: @numeric-input-header-size;
+      text-align: left;
+    }
+
+    &-down {
+      height: 18 * @rpx;
+    }
+
+    &-content,
+    &-down {
+      width: 100%;
+      padding: 20 * @rpx @h-spacing-large;
+    }
+
+    // hack, 在有 content 的时候, 收起按钮居右
+    &-content + &-down {
+      width: 28 * @rpx;
+    }
+  }
+}
+
+@keyframes keyboard-cursor {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

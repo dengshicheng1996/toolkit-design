@@ -1,0 +1,19 @@
+@import (reference) '../style/index.less';
+
+.amd-pull-to-refresh {
+  overflow: auto;
+  font-size: @font-size-content;
+
+  &-content-wrapper {
+    overflow: hidden;
+  }
+
+  &-transition {
+    transition: transform 0.3s;
+  }
+
+  &-indicator {
+    height: 0;
+    text-align: center;
+  }
+}

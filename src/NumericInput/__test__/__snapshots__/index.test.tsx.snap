@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumericInput snapshot 1`] = `
+<div
+  className="amd-numeric-input amd-numeric-input-left a"
+>
+  <Memo([object Object])
+    autoFocus={false}
+    disabled={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    value=""
+  >
+    <div
+      className="amd-numeric-input-fake-placeholder"
+    />
+    <div
+      aria-label=""
+      className="amd-numeric-input-fake"
+      data-y="111"
+      role="textbox"
+    />
+  </Memo([object Object])>
+</div>
+`;

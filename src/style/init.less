@@ -1,0 +1,145 @@
+@import (reference) './color.less';
+@import (reference) './base.less';
+
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:focus {
+  outline: none;
+}
+
+[class^='tdm-'] {
+  font-family: PingFang SC, sans-serif;
+}
+
+// 需要时加在 body 上，阻止页面滚动
+[class^='tdm-body-scroll-lock-'] {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+:root {
+  /* 业务色 */
+  --tdm-color-brand-1: @color-brand-1;
+  --tdm-color-brand-2: @color-brand-2;
+  --tdm-color-red-1: @color-red-1;
+  --tdm-color-red-2: @color-red-2;
+  --tdm-color-pink-1: @color-pink-1;
+  --tdm-color-pink-2: @color-pink-2;
+  --tdm-color-tangerine-1: @color-tangerine-1;
+  --tdm-color-tangerine-2: @color-tangerine-2;
+  --tdm-color-orange-1: @color-orange-1;
+  --tdm-color-orange-2: @color-orange-2;
+  --tdm-color-golden-1: @color-golden-1;
+  --tdm-color-golden-2: @color-golden-2;
+  --tdm-color-golden-3: @color-golden-3;
+  --tdm-color-pomonagreen-1: @color-pomonagreen-1;
+  --tdm-color-pomonagreen-2: @color-pomonagreen-2;
+  --tdm-color-darkgreen-1: @color-darkgreen-1;
+  --tdm-color-darkgreen-2: @color-darkgreen-2;
+  --tdm-color-skybule-1: @color-skybule-1;
+  --tdm-color-skybule-2: @color-skybule-2;
+  --tdm-color-royallight-1: @color-royallight-1;
+  --tdm-color-royallight-2: @color-royallight-2;
+  --tdm-color-purple-1: @color-purple-1;
+  --tdm-color-purple-2: @color-purple-2;
+  --tdm-color-ironblack-1: @color-ironblack-1;
+  --tdm-color-ironblack-2: @color-ironblack-2;
+
+  /* 背景色 */
+  --tdm-color-fill-primary: @color-fill-primary;
+  --tdm-color-fill-primary-light: @color-fill-primary-light;
+  --tdm-color-fill-warning: @color-fill-warning;
+  --tdm-color-fill-grey-base: @color-fill-grey-base;
+  --tdm-color-fill-grey-dark: @color-fill-grey-dark;
+  --tdm-color-fill-grey-light: @color-fill-grey-light;
+  --tdm-color-fill-grey-inverse: @color-fill-grey-inverse;
+  --tdm-color-divider-line: @color-divider-line;
+  --tdm-color-divider-background: @color-divider-background;
+  --tdm-color-product-mask: @color-product-mask;
+  --tdm-color-marketing-mask: @color-marketing-mask;
+
+  /* 文字色 */
+  --tdm-color-text-primary: @color-text-primary;
+  --tdm-color-text-primary-light: @color-text-primary-light;
+  --tdm-color-text-warning: @color-text-warning;
+  --tdm-color-text-title: @color-text-title;
+  --tdm-color-text-subtitle: @color-text-subtitle;
+  --tdm-color-text-weak: @color-text-weak;
+  --tdm-color-text-base: @color-text-base;
+
+  /* 不透明度 */
+  --tdm-opacity-disabled: @opacity-disabled;
+  // active 的不透明度
+  --tdm-opacity-active: @opacity-active;
+
+  /* 字体字号 */
+  --tdm-font-size-stress: @font-size-stress;
+  --tdm-font-size-title: @font-size-title;
+  --tdm-font-size-list: @font-size-list;
+  --tdm-font-size-subtitle: @font-size-subtitle;
+  --tdm-font-size-content: @font-size-content;
+  --tdm-font-size-subcontent: @font-size-subcontent;
+  --tdm-font-size-weak: @font-size-weak;
+
+  /* 数字 */
+  --tdm-font-family-pay-number: @font-family-pay-number;
+  --tdm-font-size-tdmount-core: @font-size-tdmount-core;
+  --tdm-font-size-tdmount-largenumber: @font-size-tdmount-largenumber;
+  --tdm-font-size-tdmount-large: @font-size-tdmount-large;
+  --tdm-font-size-number-keyboard: @font-size-number-keyboard;
+
+  /* 行高 */
+  --tdm-line-height-base: @line-height-base;
+  --tdm-line-height-paragraph: @line-height-paragraph;
+
+  /* 圆角 */
+  --tdm-corner-radius-sm: @corner-radius-sm;
+  --tdm-corner-radius-md: @corner-radius-md;
+  --tdm-corner-radius-lg: @corner-radius-lg;
+  --tdm-corner-radius-circle: @corner-radius-circle;
+
+  /* 尺寸 */
+  --tdm-size-0: @size-0;
+  --tdm-size-1: @size-1;
+  --tdm-size-2: @size-2;
+  --tdm-size-3: @size-3;
+  --tdm-size-4: @size-4;
+  --tdm-size-5: @size-5;
+  --tdm-size-6: @size-6;
+  --tdm-size-7: @size-7;
+  --tdm-size-8: @size-8;
+  --tdm-size-9: @size-9;
+  --tdm-size-10: @size-10;
+  --tdm-size-11: @size-11;
+  --tdm-size-12: @size-12;
+  --tdm-size-13: @size-13;
+  --tdm-size-14: @size-14;
+  --tdm-size-15: @size-15;
+  --tdm-size-16: @size-16;
+  --tdm-size-17: @size-17;
+  --tdm-size-18: @size-18;
+  --tdm-size-19: @size-19;
+  --tdm-size-20: @size-20;
+
+  /* 水平间距 */
+  --tdm-h-spacing-standard: @h-spacing-standard;
+  --tdm-h-spacing-large: @h-spacing-large;
+
+  /* 垂直间距 */
+  --tdm-v-spacing-standard: @v-spacing-standard;
+  --tdm-v-spacing-large: @v-spacing-large;
+
+  /* 边框尺寸 */
+  --tdm-border-width-standard: @border-width-standard;
+  --tdm-border-width-thick: @border-width-thick;
+
+  /* 图标尺寸 */
+  --tdm-icon-size-xs: @icon-size-xs;
+  --tdm-icon-size-sm: @icon-size-sm;
+  --tdm-icon-size-md: @icon-size-md;
+  --tdm-icon-size-lg: @icon-size-lg;
+}

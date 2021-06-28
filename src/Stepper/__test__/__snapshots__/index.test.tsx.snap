@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stepper snapshot 1`] = `
+<ForwardRef
+  data-y="111"
+  defaultValue={0}
+  downHandler={
+    <MinusOutline
+      size="md"
+    />
+  }
+  max={10}
+  min={1}
+  parser={[Function]}
+  prefixCls="amd-stepper"
+  step={1}
+  upHandler={
+    <AddOutline
+      size="md"
+    />
+  }
+  value={1}
+/>
+`;

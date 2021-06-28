@@ -1,0 +1,16 @@
+@import (reference) '../style/index.less';
+
+// start
+// active 时的图标颜色
+@radio-color: @color-brand-1;
+// end
+
+@radioWarpPrefixCls: amd-radio;
+
+.@{radioWarpPrefixCls} {
+  font-size: 0;
+
+  &-checked-icon {
+    color: @radio-color;
+  }
+}

@@ -1,0 +1,83 @@
+@import './color.less';
+@import '../prefixCls/index.less';
+
+// 设计标注的尺寸是 750px 下的 2x 尺寸，正常使用都需要除以 2
+@hd: 1px;
+@pixelSize: 0.5 * @hd;
+@rpx: 0.5 * @hd;
+
+// 原有的 env(safe-area-inset-bottom) 不能满足设计上 68 的需求
+@safe-area-inset-bottom: 68 * @rpx;
+
+// 字体
+@DINPro: DINPro, @font-family-pay-number, PingFang SC, sans-serif;
+
+//字体字号
+@font-size-stress: 54 * @pixelSize; //页面核心强调
+@font-size-title: 36 * @pixelSize; //大标题
+@font-size-list: 34 * @pixelSize; //列表
+@font-size-subtitle: 30 * @pixelSize; //小标题
+@font-size-content: 26 * @pixelSize; //常规内容
+@font-size-subcontent: 24 * @pixelSize; //次常规内容
+@font-size-weak: 22 * @pixelSize; //弱化内容和弱辅助文案
+
+//数字(数字常规字号跟文字一样，以下为特殊场景使用)
+@font-family-pay-number: DIN PRO;
+@font-size-tdmount-core: 110 * @pixelSize; //核心大金额
+@font-size-tdmount-largenumber: 90 * @pixelSize; //大数字金额
+@font-size-tdmount-large: 60 * @pixelSize; //大金额
+@font-size-number-keyboard: 50 * @pixelSize; //数字键盘
+
+//行高
+@line-height-base: 1; // 单行行高
+@line-height-paragraph: 1.5; // 多行行高
+@default-line-height: 1.4;
+
+//圆角
+@corner-radius-sm: 4 * @pixelSize; //小
+@corner-radius-md: 8 * @pixelSize; //中
+@corner-radius-lg: 16 * @pixelSize; //大
+@corner-radius-circle: 50vh; //圆
+
+//尺寸
+@size-base: 8 * @pixelSize; //基础
+@size-0: 0;
+@size-1: @size-base * 1;
+@size-2: @size-base * 2;
+@size-3: @size-base * 3;
+@size-4: @size-base * 4;
+@size-5: @size-base * 5;
+@size-6: @size-base * 6;
+@size-7: @size-base * 7;
+@size-8: @size-base * 8;
+@size-9: @size-base * 9;
+@size-10: @size-base * 10;
+@size-11: @size-base * 11;
+@size-12: @size-base * 12;
+@size-13: @size-base * 13;
+@size-14: @size-base * 14;
+@size-15: @size-base * 15;
+@size-16: @size-base * 16;
+@size-17: @size-base * 17;
+@size-18: @size-base * 18;
+@size-19: @size-base * 19;
+@size-20: @size-base * 20;
+
+//间距
+//水平间距
+@h-spacing-standard: 16 * @pixelSize; //标准
+@h-spacing-large: 24 * @pixelSize; //大间距
+
+//垂直间距
+@v-spacing-standard: 16 * @pixelSize; //标准
+@v-spacing-large: 24 * @pixelSize; //大间距
+
+//边框尺寸
+@border-width-standard: 2 * @pixelSize; //标准
+@border-width-thick: 4 * @pixelSize; //粗
+
+//图标尺寸
+@icon-size-xs: 36 * @pixelSize; //特小
+@icon-size-sm: 44 * @pixelSize; //小
+@icon-size-md: 56 * @pixelSize; //中
+@icon-size-lg: 64 * @pixelSize; //大

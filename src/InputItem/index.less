@@ -1,0 +1,62 @@
+@import (reference) '../style/index.less';
+
+// start
+// 高度
+@input-item-height: 48 * @rpx;
+// input 字体颜色
+@input-item-color: @color-text-title;
+// input 字体大小
+@input-item-size: @font-size-content;
+// input disabled color
+@input-item-color-disabled: #bbb;
+// input placeholder 颜色
+@input-item-placeholder-color: @color-text-weak;
+// input 清除 颜色
+@input-item-clear-color: @color-text-subtitle;
+// end
+
+@prefixCls: amd-input-item;
+
+.@{prefixCls} {
+  position: relative;
+  width: 100%;
+  height: @input-item-height;
+  color: @input-item-color;
+  font-size: @input-item-size;
+  line-height: @input-item-height;
+  text-align: right;
+
+  &-disabled {
+    color: @input-item-color-disabled;
+  }
+
+  &-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    margin: 0;
+    margin-right: 10 * @rpx;
+    background-color: transparent;
+    text-align: left;
+
+    &::-webkit-input-placeholder {
+      color: @input-item-placeholder-color;
+    }
+
+    &&-clear {
+      // 减去清除图标的宽度
+      width: ~'calc(100% - 44 * @{rpx})';
+    }
+  }
+
+  &-clear {
+    position: relative;
+    color: @input-item-clear-color;
+    vertical-align: text-bottom;
+  }
+}
