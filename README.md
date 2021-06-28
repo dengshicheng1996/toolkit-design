@@ -1,4 +1,4 @@
-# tencent-design
+# toolkit-design
 
 ## Getting Started
 
