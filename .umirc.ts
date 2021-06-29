@@ -84,6 +84,8 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   exportStatic: {},
+  base: '/toolkit-design',
+  publicPath: '/toolkit-design/',
   hash: true,
   menus: {
     '/components': getComponentMenus('en-US'),
