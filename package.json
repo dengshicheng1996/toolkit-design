@@ -42,10 +42,10 @@
     }
   },
   "dependencies": {
-    "array-tree-filter": "^2.1.0",
     "@ant-design/mobile-icons": "^3.0.0-alpha.8",
     "@ant-design/mobile-languages": "^3.0.0-alpha.8",
     "@ant-design/mobile-touchable": "^3.0.0-alpha.8",
+    "array-tree-filter": "^2.1.0",
     "rc-collapse": "^3.1.1",
     "rc-field-form": "^1.21.1",
     "rc-swipeout": "^2.0.11",
@@ -59,7 +59,6 @@
     "swiper": "^6.7.1"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
     "@umijs/test": "^3.0.5",
     "babel-plugin-version": "^0.2.3",
     "dumi": "^1.0.14",
